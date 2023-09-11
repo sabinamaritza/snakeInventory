@@ -4,9 +4,9 @@ from django.shortcuts import render
 def show_main(request):
     context = {
         'name': 'Corn Snake',
-        'price': 20000,
+        'price': 1000000,
         'amount': 7,
-        'description': 'snakey'
+        'description': 'Corn Snake\nMorph: Anery\nSex: Male'
     }
 
     return render(request, "main.html", context)
