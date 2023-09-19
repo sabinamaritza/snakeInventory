@@ -1,10 +1,42 @@
-<h1>🐍 Serpent's Haven 🐍</h1>
+{% extends 'base.html' %}
 
-<h5>Name: </h5>
-<p>{{ name }}</p>
-<h5>Price: </h5>
-<p>{{ price }}</p>
-<h5>Amount: </h5>
-<p>{{ amount }}</p>
-<h5>Description: </h5>
-<p>{{ description }}</p>
+{% block content %}
+    <h1>🐍 Serpent's Haven 🐍</h1>
+
+    <h5>Name:</h5>
+    <p>{{name}}</p>
+
+    <h5>Class:</h5>
+    <p>{{class}}</p>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Morph</th>
+        <th>Price</th>
+        <th>Amount</th>
+        <th>Description</th>
+        <th>Date Added</th>
+    </tr>
+
+    {% for item in items %}
+        <tr>
+            <td>{{item.name}}</td>
+            <td>{{item.morph}}</td>
+            <td>{{item.price}}</td>
+            <td>{{item.amount}}</td>
+            <td>{{item.description}}</td>
+            <td>{{item.date_added}}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+<br />
+
+<a href="{% url 'main:create_item' %}">
+    <button>
+        Add New Item
+    </button>
+</a>
+
+{% endblock content %}

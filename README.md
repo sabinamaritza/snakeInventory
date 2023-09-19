@@ -1,6 +1,7 @@
 # snakeInventory
 Link Adaptable: https://serpentshaven.adaptable.app/main/
 
+Tugas 2
 1. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 
 
@@ -19,8 +20,8 @@ models.py   <-- -->  views.py --> HTTP response
     dikembalikan kepada views.py yang akan memberikan HTTP response yang mengandung berkas HTML kembali kepada client.
 
 
-3. Jelaskan mengapa kita menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django tanpa menggunakan virtual
-   environment?
+3. Jelaskan mengapa kita menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django
+   tanpa menggunakan virtual environment?
    Virtual environment digunakan untuk meng-install package dan library yang dibutuhkan untuk suatu projek tanpa memengaruhi projek lain. Misal,
    jika pada projek 1, dibutuhkan package A versi 1, namun pada projek 2 dibutuhkan package A versi 2, dengan menggunakan virtual environment, hal
    tersebut bisa dilakukan sehingga tidak terjadi conflict. Jika virtual environment tidak digunakan saat membuat suatu projek, semua package dan
@@ -50,3 +51,22 @@ models.py   <-- -->  views.py --> HTTP response
     Salah satu perbedaan dari MVC, MVT, dan MVVM adalah interaksi View nya. Pada MVC, View berhubungan dengan Controller untuk mengirimkan input
     user serta me-request update dari Model. Pada MVT, View menggunakan View functions untuk mengakses Model dan me-return HTTP response. Dan pada
     MVVM, View berinteraksi dengan ViewModel yang akan menghubungkan dengan Model.
+
+
+Tugas 3
+1. Apa perbedaan antara form POST dan form GET dalam Django?
+
+
+2. Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?
+
+
+3. Mengapa JSON sering digunakan dalam pertukaran data antara aplikasi web modern?
+
+
+4. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+
+![POSTMAN: html](html.png)
+![POSTMAN: xml](xml.png)
+![POSTMAN: json](json.png)
+![POSTMAN: xml by id](<xml by id [1].png>)
+![POSTMAN: json by id](<json by id [2].png>)
