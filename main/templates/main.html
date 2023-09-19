@@ -1,6 +1,44 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <style>
+        table, th, td {
+            width: 100%;
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 16px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+         /* Set the percentage widths for each column */
+        th:nth-child(1), td:nth-child(1) {
+            width: 15%; /* 20% for the first column */
+        }
+
+        th:nth-child(2), td:nth-child(2) {
+            width: 20%; /* 15% for the second column */
+        }
+
+        th:nth-child(3), td:nth-child(3) {
+            width: 10%; /* 15% for the third column */
+        }
+
+        th:nth-child(4), td:nth-child(4) {
+            width: 5%; /* 15% for the fourth column */
+        }
+
+        th:nth-child(5), td:nth-child(5) {
+            width: 40%; /* 20% for the fifth column */
+        }
+
+        th:nth-child(6), td:nth-child(6) {
+            width: 10%; /* 15% for the sixth column */
+        }
+    </style>
+
     <h1>🐍 Serpent's Haven 🐍</h1>
 
     <h5>Name:</h5>
@@ -33,8 +71,29 @@
 
 <br />
 
+<style>
+    .button-style {
+        display: flex;
+        padding: 16px 28px;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        border-radius: 16px;
+        border: none;
+        background: #54BF21;
+        color: #FFF;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    a {
+        text-decoration: none;
+    }
+</style>
+
 <a href="{% url 'main:create_item' %}">
-    <button>
+    <button class="button-style">
         Add New Item
     </button>
 </a>

@@ -55,15 +55,18 @@ models.py   <-- -->  views.py --> HTTP response
 
 Tugas 3
 1. Apa perbedaan antara form POST dan form GET dalam Django?
-
+   perbedaan
 
 2. Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?
-
+   perbedaan
 
 3. Mengapa JSON sering digunakan dalam pertukaran data antara aplikasi web modern?
+   perbedaan
 
-
-4. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+4. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti
+   tutorial).
+   step by step
+   
 
 ![POSTMAN: html](html.png)
 ![POSTMAN: xml](xml.png)

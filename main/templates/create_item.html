@@ -3,6 +3,27 @@
 {% block content %}
 <h1>Add New Snake for Adoption</h1>
 
+<style>
+    .button-style {
+        display: flex;
+        padding: 16px 28px;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        border-radius: 16px;
+        border: none;
+        background: #54BF21;
+        color: #FFF;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    a {
+        text-decoration: none;
+    }
+</style>
+
 <form method="POST">
     {% csrf_token %}
     <table>
@@ -10,7 +31,7 @@
         <tr>
             <td></td>
             <td>
-                <input type="submit" value="Add Item"/>
+                <input class="button-style" type="submit" value="Add Item"/>
             </td>
         </tr>
     </table>
