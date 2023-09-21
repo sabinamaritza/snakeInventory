@@ -1,7 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@700&display=swap" rel="stylesheet">
+
     <style>
+        body {
+            background-color: #F7FFEF;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        
         table, th, td {
             width: 100%;
             border: 1px solid black;
@@ -9,37 +19,52 @@
             padding: 16px;
         }
 
+        table {
+            border-radius: 10px;
+        }
+
+        th {
+            background-color: #54BF21;
+            color: #FFF;
+        }
+
         h1 {
+            padding-top: 12px;
             text-align: center;
+            font-family: 'Crimson Text', serif;
+            font-size: 52px;
         }
 
          /* Set the percentage widths for each column */
         th:nth-child(1), td:nth-child(1) {
-            width: 15%; /* 20% for the first column */
+            width: 15%;
         }
 
         th:nth-child(2), td:nth-child(2) {
-            width: 20%; /* 15% for the second column */
+            width: 20%;
         }
 
         th:nth-child(3), td:nth-child(3) {
-            width: 10%; /* 15% for the third column */
+            width: 10%;
+            text-align: center;
         }
 
         th:nth-child(4), td:nth-child(4) {
-            width: 5%; /* 15% for the fourth column */
+            width: 5%;
+            text-align: center;
         }
 
         th:nth-child(5), td:nth-child(5) {
-            width: 40%; /* 20% for the fifth column */
+            width: 40%;
         }
 
         th:nth-child(6), td:nth-child(6) {
-            width: 10%; /* 15% for the sixth column */
+            width: 10%;
+            text-align: center;
         }
     </style>
 
-    <h1>🐍 Serpent's Haven 🐍</h1>
+    <h1>Serpent's Haven</h1>
 
     <h5>Name:</h5>
     <p>{{name}}</p>
@@ -47,28 +72,28 @@
     <h5>Class:</h5>
     <p>{{class}}</p>
 
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Morph</th>
-        <th>Price</th>
-        <th>Amount</th>
-        <th>Description</th>
-        <th>Date Added</th>
-    </tr>
 
-    {% for item in items %}
+    <table>
         <tr>
-            <td>{{item.name}}</td>
-            <td>{{item.morph}}</td>
-            <td>{{item.price}}</td>
-            <td>{{item.amount}}</td>
-            <td>{{item.description}}</td>
-            <td>{{item.date_added}}</td>
+            <th>Name</th>
+            <th>Morph</th>
+            <th>Price</th>
+            <th>Amount</th>
+            <th>Description</th>
+            <th>Date Added</th>
         </tr>
-    {% endfor %}
-</table>
 
+        {% for item in items %}
+            <tr>
+                <td>{{item.name}}</td>
+                <td>{{item.morph}}</td>
+                <td>{{item.price}}</td>
+                <td>{{item.amount}}</td>
+                <td>{{item.description}}</td>
+                <td>{{item.date_added}}</td>
+            </tr>
+        {% endfor %}
+    </table>
 <br />
 
 <style>
@@ -86,9 +111,14 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+        margin-bottom: 20px;
     }
     a {
         text-decoration: none;
+    }
+
+    a[href="{% url 'main:logout' %}"] .button-style {
+    background: #AF2323;
     }
 </style>
 
@@ -97,5 +127,13 @@
         Add New Item
     </button>
 </a>
+
+<a href="{% url 'main:logout' %}">
+    <button class="button-style">
+        Logout
+    </button>
+</a>
+
+<h5>Sesi terakhir login: {{ last_login }}</h5>
 
 {% endblock content %}
