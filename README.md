@@ -86,7 +86,7 @@ Link Adaptable: https://serpentshaven.adaptable.app/main/
 <details>
 <summary>Tugas 4</summary>
    
-   Username 1: Sabina, Password 1: Kucing<33
+   Username 1: Sabina, Password 1: Kucing<33  
    Username 2: Kucing, Password 2: haloakukucing
 
    1. Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?
@@ -105,13 +105,22 @@ Link Adaptable: https://serpentshaven.adaptable.app/main/
 
    5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti
    tutorial).
-      
 
-      Mengimplementasikan fungsi registrasi, login, dan logout untuk memungkinkan pengguna untuk mengakses aplikasi sebelumnya dengan lancar.
+      1. Mengimplementasikan fungsi registrasi, login, dan logout untuk memungkinkan pengguna untuk mengakses aplikasi sebelumnya dengan lancar.
+         Untuk membuat fungsi registrasi, pertama akan di-import built-in class UserCreationForm (seperti yang ada pada pertanyaan 1) pada views.py yang terletak di directory main. Setelah itu akan ditambahkan fungsi register yang menerima POST request. Ketika data yang dimasukkan sesuai dengan ketentuan, akun nya akan terbuat, dan user akan ke-redirect ke halaman main. Lalu, akan dibuat login.html yang akan mengatur display halaman registrasi akun baru, file tersebut juga akan dihubungkan dengan fungsi yang telah dibuat pada views.py. Setelah selesai, pada urls.py, akan di-import fungsi register dan akan ditambahkan path url baru dalam urlpatterns untuk ke halaman register.
 
- Membuat dua akun pengguna dengan masing-masing tiga dummy data menggunakan model yang telah dibuat pada aplikasi sebelumnya untuk setiap akun di lokal.
+         Setelah fungsi register telah dibuat, akan dibuat juga fungsi login. Pada views.py akan di-import function authenticate dan login yang memungkinkan pengguna melakukan login jika user telah terautentikasi. Lalu akan dibuat fungsi login yang akan ngecek jika username dan password yang diberikan sesuai dengan yang ada pada database. Jika data yang diberikan benar, maka user akan melihat halaman main, dan jika salah, user akan mendapat message "Sorry, incorrect username or password. Please try again." Setelah itu, akan dibuat login.html pada direktori templates di main yang akan mengatur display halaman login. Halaman tersebut akan dihubungkan dengan fungsi login pada views. Setelah selesai, pada urls.py, akan di-import fungsi login_user dan akan ditambahkan path url baru dalam urlpatterns untuk ke halaman login.
 
- Menghubungkan model Item dengan User.
+         Untuk membuat fungsi logout, akan di-import function logout pada views.py, dan menambahkan function logout_user. Maka jika ada request untuk logout, user akan ke-redirect ke halaman login. Pada main.html, akan ditambahkan button logout yang akan mengenerate url logout jika button tersebut di-click. Terakhir, pada urls.py, akan di-import fungsi logout_user dan akan ditambahkan path url baru dalam urlpatterns untuk redirect ke halaman yang akan ada jika button logout di-click.
 
- Menampilkan detail informasi pengguna yang sedang logged in seperti username dan menerapkan cookies seperti last login pada halaman utama aplikasi.
+         Setelah dibuat fungsi dan file html yang dibutuhkan, akan ditambahkan function login_required pada views.py, dan menambahkan baris "@login_required(login_url='/login')" sebelum fungsi show_main yang akan mengharuskan user untuk melakukan login sebelum masuk ke halaman main.
+
+      2. Membuat dua akun pengguna dengan masing-masing tiga dummy data menggunakan model yang telah dibuat pada aplikasi sebelumnya untuk setiap akun di lokal.
+         Ketika telah diimplementasikan fungsi-fungsi yang ada pada langkah 1, file nya akan di-run melalui terminal, akan di-click button "Register Now" dan mendaftarkan 2 account dengan mengisi username dan password yang sesuai dengan ketentuan, setelah itu, lakukan login, dan tambahkan barang dengan meng-click button "Add New Item" dan mengisi data yang dibutuhkan. Setelah itu, click button "Add Item", dan data akan muncul pada tabel di halaman main.
+
+      3. Menghubungkan model Item dengan User.
+         Pada models.py yang ada di main, import class User. Pada class Item, akan ditambahkan barisan kode "user = models.ForeignKey(User, on_delete=models.CASCADE)" yang menghubungkan item dengan user, dimana jika user di hapus, item-item yang berasosiasi dengan user tersebut juga akan terhapus.
+
+      4. Menampilkan detail informasi pengguna yang sedang logged in seperti username dan menerapkan cookies seperti last login pada halaman utama aplikasi.
+         Setelah selesai melakukan poin 3, dalam fungsi create_item pada views.py di main, akan ditambahkan beberapa baris kode yang bertujuan untuk memastikan bahwa item yang ditambahkan user tidak langsung ditaruh di main semua user, melainkan ditaruh pada main user yang sedang login. Setelah itu, akan diganti 'name' pada fungsi show_main di views.py menjadi username dari user yang sedang login. Untuk menambahkan cookies last login, akan di-import modul datetime dan menambahkan baris "response.set_cookie('last_login', str(datetime.datetime.now()))" pada fungsi login_user. Setelah itu, akan ditambahkan baris 'last_login': request.COOKIES['last_login'],' pada fungsi show_main agar data terlihat jika user melakukan login. Agar cookie terhapus saat user melakukan logout, tambahkan baris "response.delete_cookie('last_login')" pada fungsi logout_user. Lalu, akan ditambahkan kode html "Sesi terakhir login: {{ last_login }}" pada main.html agar dapat terlihat pada halaman main.
 </details>
