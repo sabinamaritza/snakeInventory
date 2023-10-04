@@ -129,13 +129,64 @@ Link Adaptable: https://serpentshaven.adaptable.app/main/
    <summary>Tugas 5</summary>
    
    1. Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.
-            
+      Element selector adalah salah satu jenis selektor dalam CSS yang digunakan untuk memilih elemen HTML berdasarkan nama elemennya. Setiap elemen HTML memiliki nama tertentu, seperti "p" untuk paragraf, "h1" untuk heading 1, "div" untuk divisi, dll. Element selector bermanfaat untuk memilih semua elemen dengan jenis tertentu dalam dokumen HTML tanpa perlu menambahkan atribut atau kelas tambahan pada elemen tersebut, element selector dapat digunakan secara global di seluruh halaman web, dan ini berguna ketika ingin menerapkan style ke semua elemen dengan jenis tertentu, seperti memodifikasi semua paragraf atau semua heading, dan element selector memungkinkan memilih semua elemen dengan jenis yang sama, sehingga dapat dengan mudah menerapkan gaya yang seragam pada elemen-elemen tersebut.
+      
+      Penerapan element selector yang cocok adalah ketika menerapkan gaya dasar dan seragam pada elemen-elemen yang memiliki jenis yang sama dalam seluruh halaman web, termasuk mengatur font, warna teks, margin, dan padding pada elemen-elemen seperti paragraf, heading, atau daftar. Element selector juga sering digunakan dalam gaya CSS reset atau normalize untuk menghilangkan gaya default browser yang berbeda-beda pada elemen-elemen HTML. Ini membantu memastikan bahwa tampilan situs web konsisten di berbagai browser, dan yang terakhir ketika ingin mengganti gaya default elemen-elemen HTML tertentu (misalnya, mengubah tampilan tautan atau daftar).
 
    2. Jelaskan HTML5 Tag yang kamu ketahui.
+      1. html: Ini adalah tag yang mengelilingi seluruh dokumen HTML dan menunjukkan awal dan akhir dari dokumen HTML.
+      2. head: Tag ini berisi informasi metadata tentang halaman web, seperti judul halaman, referensi ke file CSS atau JavaScript, dan meta tag untuk deskripsi, kata kunci, dan karakter set.
+      3. title: Tag ini digunakan dalam elemen 'head' untuk menentukan judul halaman web yang akan ditampilkan di tab browser.
+      4. meta: Tag ini digunakan untuk menentukan metadata tambahan, seperti karakter set dokumen, deskripsi halaman, dan kata kunci yang berkaitan dengan halaman web.
+      5. link: Tag ini digunakan untuk menghubungkan dokumen HTML dengan berkas eksternal, seperti file CSS untuk mengatur tampilan halaman.
+      6. style: Tag ini digunakan untuk menyisipkan CSS langsung ke dalam dokumen HTML, baik dalam elemen 'head' atau langsung dalam elemen HTML.
+      7. body: Ini adalah tag yang berisi semua konten yang akan ditampilkan di halaman web, seperti teks, gambar, tautan, dan elemen lainnya.
+      8. h1, h2, h3, h4, h5, h6: Tag-tag ini digunakan untuk menandai judul atau heading di halaman web, dengan 'h1' sebagai judul level tertinggi dan 'h6' sebagai level terendah.
+      9. p: Tag ini digunakan untuk mengelilingi paragraf teks.
+      10. a: Tag ini digunakan untuk membuat tautan atau hyperlink ke halaman web lain atau ke bagian lain dalam halaman yang sama.
+      11. img: Tag ini digunakan untuk menampilkan gambar di halaman web dan menyediakan atribut src untuk menentukan sumber gambar.
+      12. ul, ol, li: Tag-tag ini digunakan untuk membuat daftar tak terurut 'ul', daftar terurut 'ol', dan item daftar 'li'.
+      13. div: Tag ini digunakan sebagai wadah atau kontainer umum untuk mengelompokkan dan mengatur elemen-elemen HTML.
+      14. span: Tag ini digunakan sebagai wadah untuk mengaplikasikan gaya atau manipulasi pada sebagian kecil teks atau elemen dalam halaman web.
+      15. input: Tag ini digunakan untuk membuat elemen input dalam formulir web, seperti kotak teks, tombol radio, atau kotak centang.
+      16. form: Tag ini digunakan untuk membuat formulir web yang dapat digunakan untuk mengumpulkan data dari pengguna.
+      17. video dan audio: Tag-tag ini digunakan untuk menyisipkan pemutar video atau audio di halaman web.
+      18. header, nav, footer, dan aside: Tag-tag ini digunakan untuk mengidentifikasi elemen-elemen penting dalam struktur halaman, seperti bagian header, menu navigasi, footer, dan konten tambahan.
 
    3. Jelaskan perbedaan antara margin dan padding.
-   
+      |`Parameter Perbandingan ` |`Margin`    | `Pading`|
+      |---    |---    |---    |
+      |Definisi| Ruang antara bagian luar tata letak dan perbatasan. | Ruang antara konten elemen dan perbatasannya. Ini menciptakan ruang di dalam elemen dan diukur dalam piksel, ems, atau satuan panjang lainnya.|
+      | Otomatisasi   | Dapat diatur secara otomatis. | Tidak dapat diatur secara otomatis.|
+      |Lokasi  | Berurusan dengan aspek eksternal dokumen.| Berkaitan dengan aspek internal dokumen.|
+      |Warna Latar Belakang| Tidak terpengaruh oleh elemen gaya internal. |  Dipengaruhi oleh elemen gaya internal.|
+      |Nilai Numerik |Dapat berupa bilangan bulat apa saja.|Hanya bisa berupa bilangan real positif.	|
+
    4. Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?
+      Tailwind CSS dan Bootstrap adalah dua framework CSS yang populer digunakan untuk membangun tampilan web. Berikut adalah perbedaan antara keduanya serta kapan sebaiknya menggunakan Bootstrap daripada Tailwind, dan sebaliknya:
+      1. Pendekatan Styling:
+         `Tailwind CSS`: Tailwind adalah framework CSS yang berfokus pada pendekatan utility-first. Ini berarti Anda membangun tampilan Anda dengan menggabungkan kelas-kelas utilitas yang disediakan oleh Tailwind dalam HTML Anda. Anda dapat menentukan styling elemen secara langsung di markup HTML.
+         `Bootstrap`: Bootstrap menggunakan pendekatan komponen-first. Anda membangun tampilan Anda dengan menggabungkan komponen-komponen yang telah diatur dan dirancang sebelumnya dalam framework. Anda sering menggunakan kelas CSS Bootstrap untuk menerapkan gaya.
+
+      2. Customization:
+         `Tailwind CSS`: Tailwind sangat mudah disesuaikan. Anda dapat menyesuaikan setiap aspek tampilan dengan mengedit berkas konfigurasi Tailwind atau menambahkan kelas-kelas utilitas kustom Anda sendiri.
+         `Bootstrap`: Bootstrap memiliki tema dan gaya bawaan yang cukup konsisten. Anda dapat menyesuaikan tampilan dengan mengedit variabel Sass atau menggunakan alat penyesuaian yang disediakan oleh Bootstrap, tetapi perubahan kustom dapat memerlukan sedikit lebih banyak pekerjaan.
+
+      3. Ukuran File:
+         `Tailwind CSS`: Tailwind cenderung menghasilkan kode HTML yang lebih besar karena kelas-kelas utilitasnya ditambahkan langsung ke markup HTML. Ini dapat menghasilkan ukuran file yang lebih besar.
+         `Bootstrap`: Bootstrap memiliki ukuran file yang lebih kecil karena Anda hanya memuat komponen yang diperlukan dan menggunakan kelas CSS Bootstrap yang relevan.
+
+      4. Penggunaan:
+         `Tailwind CSS`: Tailwind sering digunakan oleh pengembang yang lebih suka bekerja dengan pendekatan utility-first dan ingin mengendalikan setiap aspek tampilan mereka secara detail. Ini juga cocok untuk proyek-proyek yang memerlukan tampilan yang sangat kustom.
+         `Bootstrap`: Bootstrap sangat cocok untuk proyek-proyek yang ingin membangun tampilan dengan cepat menggunakan komponen-komponen yang sudah ada. Ini adalah pilihan yang baik jika Anda ingin menghemat waktu dalam pembangunan dan memiliki tampilan yang cukup konsisten.
+
+      5. Kompleksitas:
+         `Tailwind CSS`: Tailwind dapat menjadi lebih sederhana dan lebih langsung karena Anda mengatur styling dengan kelas-kelas utilitas. Namun, ini juga dapat menjadi lebih rumit jika tampilan Anda menjadi sangat kompleks dengan banyak kelas.
+         `Bootstrap`: Bootstrap menawarkan komponen-komponen yang sudah siap pakai, yang dapat mengurangi kerumitan dalam membangun tampilan yang rumit.
+
+      Pilihan antara Tailwind CSS dan Bootstrap akan bergantung pada preferensi dan kebutuhan proyek. Jika diinginkan kendali yang lebih besar atas styling dan tampilan, serta siap menghabiskan lebih banyak waktu untuk menyesuaikan, Tailwind bisa menjadi pilihan yang baik. Jika ingin membangun tampilan dengan cepat dengan komponen-komponen yang sudah ada, Bootstrap bisa menjadi pilihan yang lebih cocok.
    
    5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+      
+
 </details>
