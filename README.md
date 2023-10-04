@@ -187,6 +187,6 @@ Link Adaptable: https://serpentshaven.adaptable.app/main/
       Pilihan antara Tailwind CSS dan Bootstrap akan bergantung pada preferensi dan kebutuhan proyek. Jika diinginkan kendali yang lebih besar atas styling dan tampilan, serta siap menghabiskan lebih banyak waktu untuk menyesuaikan, Tailwind bisa menjadi pilihan yang baik. Jika ingin membangun tampilan dengan cepat dengan komponen-komponen yang sudah ada, Bootstrap bisa menjadi pilihan yang lebih cocok.
    
    5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
-      
+      Pada file main.html, ditambahkan tag `<style>` yang berisi kode CSS untuk mengatur detail gambar background, warna text, font yang digunakan, desain button, desain tabel, peletakkan komponen-komponen yang ada, dll. Style yang sudah dibuat akan kemudian diimplementasikan pada bagian HTML nya dengan menggunakan atribut class pada elemen yang ingin menggunakan style tersebut. Pada file-file lain pada templates: login.html, register.html, create_item.html, dan edit_item.html juga dilakukan hal yang sama.
 
 </details>
