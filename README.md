@@ -129,6 +129,7 @@ Link Adaptable: https://serpentshaven.adaptable.app/main/
    <summary>Tugas 5</summary>
    
    1. Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.
+            
 
    2. Jelaskan HTML5 Tag yang kamu ketahui.
 
