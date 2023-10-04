@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<style>
+    .button-style {
+        display: flex;
+        padding: 16px 28px;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        border-radius: 16px;
+        border: none;
+        background: #54BF21;
+        color: #FFF;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    a {
+        text-decoration: none;
+    }
+</style>
+
+<h1>Edit Item</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+        <tr>
+            <td></td>
+            <td>
+                <input class="button-style" type="submit" value="Edit Item"/>
+            </td>
+        </tr>
+    </table>
+</form>
+
+{% endblock %}

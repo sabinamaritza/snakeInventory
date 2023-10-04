@@ -124,3 +124,17 @@ Link Adaptable: https://serpentshaven.adaptable.app/main/
       4. Menampilkan detail informasi pengguna yang sedang logged in seperti username dan menerapkan cookies seperti last login pada halaman utama aplikasi.
          Setelah selesai melakukan poin 3, dalam fungsi create_item pada views.py di main, akan ditambahkan beberapa baris kode yang bertujuan untuk memastikan bahwa item yang ditambahkan user tidak langsung ditaruh di main semua user, melainkan ditaruh pada main user yang sedang login. Setelah itu, akan diganti 'name' pada fungsi show_main di views.py menjadi username dari user yang sedang login. Untuk menambahkan cookies last login, akan di-import modul datetime dan menambahkan baris "response.set_cookie('last_login', str(datetime.datetime.now()))" pada fungsi login_user. Setelah itu, akan ditambahkan baris 'last_login': request.COOKIES['last_login'],' pada fungsi show_main agar data terlihat jika user melakukan login. Agar cookie terhapus saat user melakukan logout, tambahkan baris "response.delete_cookie('last_login')" pada fungsi logout_user. Lalu, akan ditambahkan kode html "Sesi terakhir login: {{ last_login }}" pada main.html agar dapat terlihat pada halaman main.
 </details>
+
+<details>
+   <summary>Tugas 5</summary>
+   
+   1. Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.
+
+   2. Jelaskan HTML5 Tag yang kamu ketahui.
+
+   3. Jelaskan perbedaan antara margin dan padding.
+   
+   4. Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?
+   
+   5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+</details>
