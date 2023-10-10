@@ -5,10 +5,21 @@
 {% endblock meta %}
 
 {% block content %}
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
     body {
-        background-color: #060F02;
+        background-image: url('https://e1.pxfuel.com/desktop-wallpaper/48/879/desktop-wallpaper-green-python-green-snake-tree-branch-reptile-coiled-snake-animals-green-tree-python.jpg');
+        /* background-image: url('https://www.worldatlas.com/upload/a4/91/91/shutterstock-1708408498.jpg'); */
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
         font-family: 'Open Sans', sans-serif;
+        /* background-color: #060F02; */
     }
 
     .login {
@@ -20,11 +31,37 @@
         color: #FDFFFB;
     }
 
+    h1 {
+        padding-top: 32px;
+        text-align: center;
+        font-family: 'Crimson Text', serif;
+        font-size: 52px;
+    }
+
+    p {
+        margin-top: 12px;
+        margin-bottom: 0;
+        font-weight: 500;
+    }
+
     td {
         padding-bottom: 20px;
     }
 
     .label-container {
+        width: 440px;
+        background-color: rgba(255,255,255,0.13);
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255,255,255,0.1);
+        box-shadow: 0 0 40px rgba(8,7,16,0.6);
+        margin: 0 auto; /* Center align the container */
+        padding: 20px; /* Add padding to center align the content horizontally */
+        margin-top: 32px;
+        padding-bottom: 48px;
+    }
+
+    .label-container1 {
         width: 360px;
         background-color: rgba(255,255,255,0.13);
         border-radius: 10px;
@@ -33,12 +70,24 @@
         box-shadow: 0 0 40px rgba(8,7,16,0.6);
         margin: 0 auto; /* Center align the container */
         padding: 20px; /* Add padding to center align the content horizontally */
-        margin-bottom: 20px;
+        margin-top: 32px;
+    }
+
+    .label-container2 {
+        width: 360px;
+        background-color: rgba(255,255,255,0.13);
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255,255,255,0.1);
+        box-shadow: 0 0 40px rgba(8,7,16,0.6);
+        margin: 0 auto; /* Center align the container */
+        padding: 20px; /* Add padding to center align the content horizontally */
+        margin-top: 16px;
     }
 
     .button-primary {
-        padding: 16px 28px;
-        display: flex;
+        padding: 16px 40px;
+        display: inline-block;
         justify-content: center;
         align-items: center;
         gap: 8px;
@@ -50,22 +99,48 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+        margin-top: 20px;
         margin-bottom: 20px;
+    }
+
+    .button-secondary {
+        padding: 16px 40px;
+        display: inline-block;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        border-radius: 16px;
+        border: none;
+        background: #B1E09B;
+        color: #060F02;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-top: 16px;
+    }
+
+    a {
+        text-decoration: none;
+        margin-bottom: 0px;
     }
 
     a[href="{% url 'main:logout' %}"] .button-primary {
         background: #AF2323;
-        margin-bottom: 0px;
+        /* margin-bottom: 0px; */
     }
 </style>
 
-<div class = "login">
+<div class = "login label-container">
 
     <h1>Login</h1>
-    <div class="label-container">
+    <div>
         <form method="POST" action="">
             {% csrf_token %}
-            <table>
+            <input type="text" name="username" placeholder="Username" class="form-control label-container1">
+            <input type="password" name="password" placeholder="Password" class="form-control label-container2">
+            <input class="button-primary" type="submit" value="Login">
+            <!-- <table>
                 <tr>
                     <td>Username: </td>
                     <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
@@ -80,7 +155,7 @@
                     <td></td>
                     <td><input class="button-primary" type="submit" value="Login"></td>
                 </tr>
-            </table>
+            </table> -->
         </form>
     
         {% if messages %}

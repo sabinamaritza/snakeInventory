@@ -15,9 +15,7 @@ Link Adaptable: https://serpentshaven.adaptable.app/main/
                            |
                       templates.py
     
-    Setelah client melakukan HTTP request kepada URL, akan dicari pattern yang sesuai pada urls.py lalu akan dipanggil fungsi atau class pada
-    views.py yang sesuai. Jika ada data yang dibutuhkan, proses akan dilanjut ke models.py yang menyediakan data tersebut. Setelah itu akan
-    dikembalikan kepada views.py yang akan memberikan HTTP response yang mengandung berkas HTML kembali kepada client.
+    Setelah client melakukan HTTP request kepada URL, akan dicari pattern yang sesuai pada urls.py lalu akan dipanggil fungsi atau class pada views.py yang sesuai. Jika ada data yang dibutuhkan, proses akan dilanjut ke models.py yang menyediakan data tersebut. Setelah itu akan dikembalikan kepada views.py yang akan memberikan HTTP response yang mengandung berkas HTML kembali kepada client.
 
 
    3. Jelaskan mengapa kita menggunakan virtual environment? Apakah kita tetap dapat membuat aplikasi web berbasis Django
@@ -134,24 +132,24 @@ Link Adaptable: https://serpentshaven.adaptable.app/main/
       Penerapan element selector yang cocok adalah ketika menerapkan gaya dasar dan seragam pada elemen-elemen yang memiliki jenis yang sama dalam seluruh halaman web, termasuk mengatur font, warna teks, margin, dan padding pada elemen-elemen seperti paragraf, heading, atau daftar. Element selector juga sering digunakan dalam gaya CSS reset atau normalize untuk menghilangkan gaya default browser yang berbeda-beda pada elemen-elemen HTML. Ini membantu memastikan bahwa tampilan situs web konsisten di berbagai browser, dan yang terakhir ketika ingin mengganti gaya default elemen-elemen HTML tertentu (misalnya, mengubah tampilan tautan atau daftar).
 
    2. Jelaskan HTML5 Tag yang kamu ketahui.
-      1. html: Ini adalah tag yang mengelilingi seluruh dokumen HTML dan menunjukkan awal dan akhir dari dokumen HTML.
-      2. head: Tag ini berisi informasi metadata tentang halaman web, seperti judul halaman, referensi ke file CSS atau JavaScript, dan meta tag untuk deskripsi, kata kunci, dan karakter set.
-      3. title: Tag ini digunakan dalam elemen 'head' untuk menentukan judul halaman web yang akan ditampilkan di tab browser.
-      4. meta: Tag ini digunakan untuk menentukan metadata tambahan, seperti karakter set dokumen, deskripsi halaman, dan kata kunci yang berkaitan dengan halaman web.
-      5. link: Tag ini digunakan untuk menghubungkan dokumen HTML dengan berkas eksternal, seperti file CSS untuk mengatur tampilan halaman.
-      6. style: Tag ini digunakan untuk menyisipkan CSS langsung ke dalam dokumen HTML, baik dalam elemen 'head' atau langsung dalam elemen HTML.
-      7. body: Ini adalah tag yang berisi semua konten yang akan ditampilkan di halaman web, seperti teks, gambar, tautan, dan elemen lainnya.
-      8. h1, h2, h3, h4, h5, h6: Tag-tag ini digunakan untuk menandai judul atau heading di halaman web, dengan 'h1' sebagai judul level tertinggi dan 'h6' sebagai level terendah.
-      9. p: Tag ini digunakan untuk mengelilingi paragraf teks.
-      10. a: Tag ini digunakan untuk membuat tautan atau hyperlink ke halaman web lain atau ke bagian lain dalam halaman yang sama.
-      11. img: Tag ini digunakan untuk menampilkan gambar di halaman web dan menyediakan atribut src untuk menentukan sumber gambar.
-      12. ul, ol, li: Tag-tag ini digunakan untuk membuat daftar tak terurut 'ul', daftar terurut 'ol', dan item daftar 'li'.
-      13. div: Tag ini digunakan sebagai wadah atau kontainer umum untuk mengelompokkan dan mengatur elemen-elemen HTML.
-      14. span: Tag ini digunakan sebagai wadah untuk mengaplikasikan gaya atau manipulasi pada sebagian kecil teks atau elemen dalam halaman web.
-      15. input: Tag ini digunakan untuk membuat elemen input dalam formulir web, seperti kotak teks, tombol radio, atau kotak centang.
-      16. form: Tag ini digunakan untuk membuat formulir web yang dapat digunakan untuk mengumpulkan data dari pengguna.
-      17. video dan audio: Tag-tag ini digunakan untuk menyisipkan pemutar video atau audio di halaman web.
-      18. header, nav, footer, dan aside: Tag-tag ini digunakan untuk mengidentifikasi elemen-elemen penting dalam struktur halaman, seperti bagian header, menu navigasi, footer, dan konten tambahan.
+      1. `<html>`: Ini adalah tag yang mengelilingi seluruh dokumen HTML dan menunjukkan awal dan akhir dari dokumen HTML.
+      2. `<head>`: Tag ini berisi informasi metadata tentang halaman web, seperti judul halaman, referensi ke file CSS atau JavaScript, dan meta tag untuk deskripsi, kata kunci, dan karakter set.
+      3. `<title>`: Tag ini digunakan dalam elemen 'head' untuk menentukan judul halaman web yang akan ditampilkan di tab browser.
+      4. `<meta>`: Tag ini digunakan untuk menentukan metadata tambahan, seperti karakter set dokumen, deskripsi halaman, dan kata kunci yang berkaitan dengan halaman web.
+      5. `<link>`: Tag ini digunakan untuk menghubungkan dokumen HTML dengan berkas eksternal, seperti file CSS untuk mengatur tampilan halaman.
+      6. `<style>`: Tag ini digunakan untuk menyisipkan CSS langsung ke dalam dokumen HTML, baik dalam elemen 'head' atau langsung dalam elemen HTML.
+      7. `<body>`: Ini adalah tag yang berisi semua konten yang akan ditampilkan di halaman web, seperti teks, gambar, tautan, dan elemen lainnya.
+      8. `<h1>, <h2>, <h3>, <h4>, <h5>, <h6>`: Tag-tag ini digunakan untuk menandai judul atau heading di halaman web, dengan 'h1' sebagai judul level tertinggi dan 'h6' sebagai level terendah.
+      9. `<p>`: Tag ini digunakan untuk mengelilingi paragraf teks.
+      10. `<a>`: Tag ini digunakan untuk membuat tautan atau hyperlink ke halaman web lain atau ke bagian lain dalam halaman yang sama.
+      11. `<img>`: Tag ini digunakan untuk menampilkan gambar di halaman web dan menyediakan atribut src untuk menentukan sumber gambar.
+      12. `<ul>, <ol>, <li>`: Tag-tag ini digunakan untuk membuat daftar tak terurut 'ul', daftar terurut 'ol', dan item daftar 'li'.
+      13. `<div>`: Tag ini digunakan sebagai wadah atau kontainer umum untuk mengelompokkan dan mengatur elemen-elemen HTML.
+      14. `<span>`: Tag ini digunakan sebagai wadah untuk mengaplikasikan gaya atau manipulasi pada sebagian kecil teks atau elemen dalam halaman web.
+      15. `<input>`: Tag ini digunakan untuk membuat elemen input dalam formulir web, seperti kotak teks, tombol radio, atau kotak centang.
+      16. `<form>`: Tag ini digunakan untuk membuat formulir web yang dapat digunakan untuk mengumpulkan data dari pengguna.
+      17. `<video> dan <audio>`: Tag-tag ini digunakan untuk menyisipkan pemutar video atau audio di halaman web.
+      18. `<header>, <nav>, <footer>, dan <aside>`: Tag-tag ini digunakan untuk mengidentifikasi elemen-elemen penting dalam struktur halaman, seperti bagian header, menu navigasi, footer, dan konten tambahan.
 
    3. Jelaskan perbedaan antara margin dan padding.
       |`Parameter Perbandingan ` |`Margin`    | `Pading`|
@@ -188,5 +186,21 @@ Link Adaptable: https://serpentshaven.adaptable.app/main/
    
    5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
       Pada file main.html, ditambahkan tag `<style>` yang berisi kode CSS untuk mengatur detail gambar background, warna text, font yang digunakan, desain button, desain tabel, peletakkan komponen-komponen yang ada, dll. Style yang sudah dibuat akan kemudian diimplementasikan pada bagian HTML nya dengan menggunakan atribut class pada elemen yang ingin menggunakan style tersebut. Pada file-file lain pada templates: login.html, register.html, create_item.html, dan edit_item.html juga dilakukan hal yang sama.
+
+</details>
+
+<details>
+   <summary>Tugas 6</summary>
+
+   1. Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.
+      
+
+   2. Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma event-driven programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.
+   
+   3. Jelaskan penerapan asynchronous programming pada AJAX.
+
+   4. Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.
+   
+   5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 
 </details>
