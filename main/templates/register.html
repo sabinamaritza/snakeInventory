@@ -5,10 +5,91 @@
 {% endblock meta %}
 
 {% block content %}  
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
-    .button-style {
-        display: flex;
-        padding: 16px 28px;
+    body {
+        background-image: url('https://e1.pxfuel.com/desktop-wallpaper/48/879/desktop-wallpaper-green-python-green-snake-tree-branch-reptile-coiled-snake-animals-green-tree-python.jpg');
+        /* background-image: url('https://www.worldatlas.com/upload/a4/91/91/shutterstock-1708408498.jpg'); */
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        font-family: 'Open Sans', sans-serif;
+        /* background-color: #060F02; */
+    }
+
+    .login {
+        text-align: center; /* Center align the content */
+        padding: 20px; /* Add padding to center align the content vertically */
+    }
+
+    input {
+        width: 440px;
+        background-color: rgba(255,255,255,0.13);
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255,255,255,0.1);
+        box-shadow: 0 0 40px rgba(8,7,16,0.6);
+        margin: 0 auto; /* Center align the container */
+        padding: 16px; /* Add padding to center align the content horizontally */
+        margin-top: 32px;
+        margin-bottom: 20px;
+    }
+
+    th, td, h1, ul, li, p {
+        color: #FDFFFB;
+    }
+
+    h1 {
+        margin-top: 28px;
+        text-align: center;
+        font-family: 'Crimson Text', serif;
+        font-size: 52px;
+    }
+
+    p {
+        margin-top: 20px;
+        margin-bottom: 0;
+        font-weight: 500;
+    }
+
+    td {
+        padding-bottom: 20px;
+    }
+
+    .label-container {
+        width: 720px;
+        background-color: rgba(255,255,255,0.13);
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255,255,255,0.1);
+        box-shadow: 0 0 40px rgba(8,7,16,0.6);
+        margin: 0 auto; /* Center align the container */
+        padding: 20px; /* Add padding to center align the content horizontally */
+        margin-top: 32px;
+        padding-bottom: 40px;
+        margin-bottom: 32px;
+    }
+
+    .label-container1 {
+        width: 440px;
+        background-color: rgba(255,255,255,0.13);
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255,255,255,0.1);
+        box-shadow: 0 0 40px rgba(8,7,16,0.6);
+        margin: 0 auto; /* Center align the container */
+        padding: 16px; /* Add padding to center align the content horizontally */
+        margin-top: 32px;
+    }
+
+    .button-primary {
+        padding: 16px 40px;
+        display: inline-block;
         justify-content: center;
         align-items: center;
         gap: 8px;
@@ -20,14 +101,34 @@
         font-style: normal;
         font-weight: 400;
         line-height: normal;
+        margin-top: 28px;
+        margin-bottom: 20px;
     }
-    
+
+    .button-secondary {
+        padding: 16px 40px;
+        display: inline-block;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        border-radius: 16px;
+        border: none;
+        background: #B1E09B;
+        color: #060F02;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-top: 16px;
+    }
+
     a {
         text-decoration: none;
+        margin-bottom: 0px;
     }
 </style>
 
-<div class = "login">
+<div class = "login label-container">
     
     <h1>Register</h1>  
 
@@ -37,7 +138,7 @@
                 {{ form.as_table }}  
                 <tr>  
                     <td></td>
-                    <td><input type="submit" name="submit" value="Daftar" class="button-style"/></td>  
+                    <td><input class="button-primary" type="submit" name="submit" value="Daftar"/></td>  
                 </tr>  
             </table>  
         </form>
@@ -46,7 +147,7 @@
         <ul>   
             {% for message in messages %}  
                 <li>{{ message }}</li>  
-                {% endfor %}  
+            {% endfor %}  
         </ul>   
     {% endif %}
 

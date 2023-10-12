@@ -37,7 +37,7 @@
 
         }
 
-        td, h1, h5, p {
+        label, td, h1, h5, p {
             color: #FDFFFB;
         }
 
@@ -191,6 +191,23 @@
             margin-bottom: 20px;
         }
 
+        .button-secondary2 {
+            display: flex;
+            padding: 16px 28px;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            border-radius: 12px;
+            border: 2px solid #54BF21;
+            background: none;
+            color: #FFF;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            margin-bottom: 20px;
+        }
+
         .button-secondary.delete-button {
             display: flex;
             padding: 12px 20px;
@@ -260,7 +277,94 @@
         <p>{{class}}</p>
     </div>
 
-    <table>
+    <table id="item_table"></table>
+
+    <script>
+        async function getItems() {
+            return fetch("{% url 'main:get_item_json' %}").then((res) => res.json())
+        }
+
+        async function refreshItems() {
+            document.getElementById("item_table").innerHTML = ""
+            const items = await getItems()
+            let htmlString = `<tr>
+                <th>Name</th>
+                <th>Morph</th>
+                <th>Price</th>
+                <th>Amount</th>
+                <th>Description</th>
+                <th>Date Added</th>
+            </tr>`
+            items.forEach((snake) => {
+                htmlString += `\n<tr>
+                <td>${snake.fields.name}</td>
+                <td>${snake.fields.morph}</td>
+                <td>${snake.fields.price}</td>
+                <td>${snake.fields.amount}</td>
+                <td>${snake.fields.description}</td>
+                <td>${snake.fields.date_added}</td>
+            </tr>` 
+            })
+            
+            document.getElementById("item_table").innerHTML = htmlString
+
+        function addItem() {
+            fetch("{% url 'main:add_item_ajax' %}", {
+                method: "POST",
+                body: new FormData(document.querySelector('#form'))
+            }).then(refreshItems)
+
+            document.getElementById("form").reset()
+            return false
+        }
+
+        document.getElementById("button_add").onclick = addItem
+        }
+
+        refreshItems()
+    </script>
+    
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content label-container">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Add New Product</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="form" onsubmit="return false;">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <label for="name" class="col-form-label">Name:</label>
+                            <input type="text" class="form-control" id="name" name="name"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="morph" class="col-form-label">Morph:</label>
+                            <input type="text" class="form-control" id="morph" name="morph"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="price" class="col-form-label">Price:</label>
+                            <input type="number" class="form-control" id="price" name="price"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="amount" class="col-form-label">Amount:</label>
+                            <input type="number" class="form-control" id="amount" name="amount"></input>
+                        </div>
+                        <div class="mb-3">
+                            <label for="description" class="col-form-label">Description:</label>
+                            <textarea class="form-control" id="description" name="description"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn button-secondary2" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn button-primary" id="button_add" data-bs-dismiss="modal">Add Product</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- <table>
         <tr>
             <th>Name</th>
             <th>Morph</th>
@@ -293,8 +397,10 @@
                 </td>
             </tr>
         {% endfor %}
-    </table>
+    </table> -->
 <br />
+
+<button type="button" class="btn button-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Product by AJAX</button>
 
 <a href="{% url 'main:create_item' %}">
     <button class="button-primary">
