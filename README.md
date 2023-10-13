@@ -205,14 +205,59 @@ Link Adaptable: https://serpentshaven.adaptable.app/main/
 
    2. Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma event-driven programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.  
       Paradigma event-driven programming merujuk pada pendekatan pemrograman di mana program merespons peristiwa (events) yang terjadi secara asinkron. Program ini tidak hanya menjalankan perintah secara berurutan, tetapi lebih fokus pada menanggapi peristiwa yang dipicu oleh pengguna atau sumber eksternal. Peristiwa ini bisa berupa tindakan pengguna seperti mengklik tombol, mengisi formulir, atau menggerakkan mouse. Program akan mengeksekusi kode tertentu saat peristiwa tersebut terjadi.
+
+      Contoh dalam tugas ini adalah dengan menggunakan event listener untuk menangani klik tombol "Add Product by AJAX" dan ketika tombol "Add Product" dalam modal di-klik pada main.html.  
+      `document.getElementById("button_add").onclick = addItem`
    
    3. Jelaskan penerapan asynchronous programming pada AJAX.  
-      a
+      Penerapan asynchronous programming pada AJAX (Asynchronous JavaScript and XML) adalah salah satu komponen kunci yang memungkinkan aplikasi web untuk berinteraksi dengan server dan mengambil atau mengirim data tanpa menghentikan eksekusi kode JavaScript utama. Ini sangat penting untuk memastikan bahwa aplikasi web tetap responsif dan tidak menghalangi pengalaman pengguna ketika melakukan permintaan jaringan atau operasi yang membutuhkan waktu.  
+      `Permintaan Asynchronous`: Saat Anda membuat permintaan AJAX, permintaan ini secara alami asinkron. Ini berarti bahwa permintaan tersebut akan dikirim ke server, dan program JavaScript tidak akan menunggu dengan blokir hingga permintaan selesai. Sebaliknya, program akan terus menjalankan kode lain, yang memungkinkan aplikasi untuk tetap responsif.  
+      `Event Handling`: Saat Anda mengirim permintaan AJAX, Anda harus menentukan bagaimana aplikasi harus menangani hasil permintaan. Anda menggunakan event listeners untuk menangani peristiwa seperti pemuatan selesai (load) atau kesalahan (error).  
+      `Callback Functions`: Selain menggunakan event listeners, Anda juga dapat menggunakan callback functions untuk menentukan tindakan yang harus diambil setelah permintaan selesai. Anda dapat meneruskan fungsi sebagai argumen ke dalam metode permintaan xhr, yang akan dipanggil saat permintaan selesai.
 
    4. Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.  
-      a
+      Pemilihan antara Fetch API dan jQuery untuk penerapan AJAX dalam proyek Anda dapat didasarkan pada sejumlah faktor, dan tidak ada satu jawaban yang benar untuk semua situasi. Mari kita bandingkan keduanya dan sebutkan beberapa kelebihan dan kelemahan masing-masing:  
+      `Fetch API`  
+      **Kelebihan:**
+      1. `Standard Web Modern`: Fetch API adalah bagian dari spesifikasi JavaScript modern, dan dengan demikian, merupakan standar web terbaru. Ini adalah teknologi yang direkomendasikan oleh W3C (World Wide Web Consortium) dan merupakan bagian dari perkembangan masa depan dalam pemrograman web.
+
+      2. `Promise-Based`: Fetch API adalah promise-based, yang memungkinkan Anda untuk lebih mudah mengelola asynchronous operations dan menghindari "callback hell" (callback nesting) yang sering terjadi dalam penggunaan jQuery. Ini membuat kode lebih mudah dibaca dan dipelihara.
+
+      3. `Fleksibilitas`: Anda memiliki lebih banyak kontrol dalam mengelola permintaan HTTP, termasuk kemampuan untuk mengatur header, mode permintaan (CORS), dan tipe konten.
+
+      4. `Modularitas`: Anda dapat menggabungkan Fetch API dengan berbagai library dan kerangka kerja modern yang lebih kecil untuk membangun aplikasi web yang lebih ringan.
+
+      **Kekurangan:**
+      1. `Kurva Pembelajaran`: Jika Anda belum terbiasa dengan promise-based programming, Fetch API mungkin memiliki kurva pembelajaran yang lebih tinggi.
+
+      2. `Browser Support`: Meskipun sebagian besar browser modern mendukung Fetch API, beberapa browser lama mungkin tidak memiliki dukungan yang sama. Untuk browser yang lebih lama, Anda mungkin perlu menggunakan polifil atau solusi lain.
+
+      `jQuery:`  
+      **Kelebihan:**  
+      1. `Kompatibilitas Silang`: jQuery sangat kompatibel dengan berbagai browser, termasuk versi lama. Ini membuatnya menjadi pilihan yang baik jika Anda perlu mendukung browser yang lebih tua.
+
+      2. `Sederhana`: jQuery dirancang untuk membuat hal-hal yang umum dilakukan dengan JavaScript lebih sederhana. Ini mengurangi jumlah kode yang perlu Anda tulis dan mempercepat pengembangan.
+
+      3. `Dukungan Pustaka dan Plugin`: jQuery memiliki berbagai plugin dan ekstensi yang dapat digunakan untuk memperluas fungsionalitasnya, termasuk plugin AJAX yang mempermudah penggunaan AJAX.
+
+      **Kekurangan:**  
+      1. `Berat`: jQuery adalah pustaka yang lebih besar daripada Fetch API. Jika Anda hanya membutuhkan fungsionalitas AJAX, menggunakan jQuery mungkin terasa berat, terutama dalam aplikasi web yang lebih kecil.
+
+      2. `Tidak Sesuai Standar Web Terbaru`: Meskipun masih digunakan dalam banyak proyek, jQuery bukan bagian dari standar web terbaru dan bukanlah pilihan masa depan dalam pengembangan web. Ini mungkin kurang relevan dalam mengikuti tren teknologi web terbaru.
+
+      3. `Keterbatasan Kontrol`: Anda mungkin memiliki lebih sedikit kontrol langsung atas permintaan HTTP dibandingkan dengan Fetch API.
+
+      Keputusan akhir tentang apakah penggunaan Fetch API atau jQuery tergantung pada proyek, kebutuhan spesifik, tingkat kenyamanan dengan promise-based programming, dan target audiens (apakah ada keperluan untuk mendukung browser lama). Dalam konteks proyek-proyek modern, Fetch API sering dianggap sebagai pilihan yang lebih baik karena lebih sesuai dengan standar web terbaru dan memungkinkan kode JavaScript yang lebih bersih dan mudah dipelihara.
    
    5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).  
-      a
+      1. Menambahkan 2 fungsi baru pada views.py untuk mengembalikan data dalam JSON, dan menambahkan data dengan AJAX. Sebelum fungsi `add_item_ajax`, ditambahkan `@csrf_exempt` untuk menonaktifkan perlindungan CSRF (Cross-Site Request Forgery) untuk fungsi tersebut. Hal ini karena dalam fungsi ini web menerima permintaan POST yang dikirim dari JavaScript. Setelah itu, akan ditambahkan URL routing untuk fungsi yang telah dibuat pada urls.py dalam directory main.
+
+      2. Lalu pada main.html, mengganti bagian table menjadi `<table id="item_table"></table>` agar bisa diperbarui secara dinamis oleh JavaScript.  
+      `async function getItems()` merupakan fungsi asinkron yang bertujuan untuk mengambil data dari server. Fungsi ini menggunakan `fetch` untuk mengambil data dari URL yang dihasilkan menggunakan templatetag Django `{% url 'main:get_item_json' %}`. Setelah mendapatkan respon, fungsi ini menguraikan respon JSON menggunakan `.json()` dan mengembalikan data sebagai Promise.  
+      `async function refreshItems()`adalah fungsi yang digunakan untuk mengambil data menggunakan `getItems()`, kemudian membangun kembali tabel HTML dengan data yang diterima. Ini berarti bahwa tabel akan diperbarui secara dinamis setiap kali fungsi ini dipanggil.  
+      Di dalam `refreshItems()`, elemen HTML dengan id `item_table` dibersihkan (diatur ulang ke string kosong), kemudian tabel HTML dibangun ulang menggunakan data yang diterima dari `getItems()`. Data tersebut diambil dari respon yang merupakan array objek yang mewakili item-item dalam tabel.  
+      `function addItem()` adalah fungsi yang dipanggil saat tombol "Add Product" diklik. Fungsi ini mengirim permintaan POST ke URL yang dihasilkan oleh `{% url 'main:add_item_ajax' %}` dengan data yang diambil dari formulir HTML yang memiliki id "form". Kemudian, setelah berhasil menambahkan item, akan memanggil `refreshItems()` untuk memperbarui tampilan tabel dengan item baru. Terakhir, formulir direset sehingga pengguna dapat menambahkan item lain tanpa perlu memuat ulang halaman.  
+      `document.getElementById("button_add").onclick = addItem` digunakan untuk menambahkan event listener ke tombol "Add Product", sehingga saat tombol tersebut diklik, fungsi `addItem()` akan dipanggil.  
+      `refreshItems()` adalah fungsi ini dipanggil pada akhir kode JavaScript sehingga ketika halaman dimuat, tabel akan langsung diisi dengan data yang diterima dari server.
 
 </details>
