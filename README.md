@@ -192,19 +192,27 @@ Link Adaptable: https://serpentshaven.adaptable.app/main/
 <details>
    <summary>Tugas 6</summary>
 
-   1. Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.
+   1. Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.  
+      `Asynchronous`
+      1. Multi-thread, dimana operasi atau program dapat berjalan secara paralel
+      2. Non-blocking, sehingga dapat mengirimkan beberapa request ke server
+      3. Lebih cepat karena beberapa operasi dapat berjalan dalam waktu yang sama  
+      
+      `Synchronous`
+      1. Single-thread, dimana hanya satu operasi atau program bisa jalan dalam suatu waktu
+      2. Blocking, sehingga hanya akan mengirimkan 1 request kepada server dalam suatu waktu, dan akan menunggu hingga request tersebut menerima response
+      3. Lebih pelan dan metodis
+
+   2. Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma event-driven programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.  
+      Paradigma event-driven programming merujuk pada pendekatan pemrograman di mana program merespons peristiwa (events) yang terjadi secara asinkron. Program ini tidak hanya menjalankan perintah secara berurutan, tetapi lebih fokus pada menanggapi peristiwa yang dipicu oleh pengguna atau sumber eksternal. Peristiwa ini bisa berupa tindakan pengguna seperti mengklik tombol, mengisi formulir, atau menggerakkan mouse. Program akan mengeksekusi kode tertentu saat peristiwa tersebut terjadi.
+   
+   3. Jelaskan penerapan asynchronous programming pada AJAX.  
       a
 
-   2. Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma event-driven programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.
+   4. Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.  
       a
    
-   3. Jelaskan penerapan asynchronous programming pada AJAX.
-      a
-
-   4. Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.
-      a
-   
-   5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+   5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).  
       a
 
 </details>
